@@ -1,4 +1,4 @@
-﻿<Properties StartupConfiguration="{00D756E6-0562-4735-B0F0-FD47A41B9D4D}|Default">
+﻿<Properties>
   <MonoDevelop.Ide.Workbench ActiveDocument="ShippableCI/Program.cs">
     <Files>
       <File FileName="ShippableCI/Program.cs" Line="22" Column="1" />
@@ -9,6 +9,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ci-csharp-consoleapp PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
 </Properties>
