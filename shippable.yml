@@ -6,14 +6,14 @@ build:
     - /root/.config/NuGet
     - /root/.nuget
   pre_ci_boot:
-    image_name: seniorquico/u16dotnet
-    image_tag: "v5.7.1-5.2.0.196-1"
+    image_name: devopsrecipes/u16dotnet
+    image_tag: "master.1"
     options: "-e HOME=/root"
   ci:
     - mono --version
     - msbuild /version
     - csc /version
     - echo 'Restoring NuGet dependencies...'
-    - msbuild /target:restore /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 /verbosity:detailed ShippableCI.sln
+    - msbuild /target:restore /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 /verbosity:detailed ci-csharp-consoleapp.sln
     - echo 'Building project...'
-    - msbuild /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 /verbosity:detailed ShippableCI.sln
+    - msbuild /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 /verbosity:detailed ci-csharp-consoleapp.sln
