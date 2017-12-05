@@ -14,6 +14,8 @@ build:
     - msbuild /version
     - csc /version
     - echo 'Restoring NuGet dependencies...'
-    - msbuild /target:restore /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 /verbosity:detailed ci-csharp-consoleapp.sln
+    - msbuild /target:restore /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 ci-csharp-consoleapp.sln
     - echo 'Building project...'
-    - msbuild /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 /verbosity:detailed ci-csharp-consoleapp.sln
+    - msbuild /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 ci-csharp-consoleapp.sln
+    - echo 'Test drive the application on Ubuntu16'
+    - ls -lR
