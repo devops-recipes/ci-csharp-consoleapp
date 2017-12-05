@@ -1,0 +1,11 @@
+/Users/ambarish/Projects/ShippableCI/ShippableCI/bin/Release/netcoreapp2.0/ci-csharp-consoleapp.deps.json
+/Users/ambarish/Projects/ShippableCI/ShippableCI/bin/Release/netcoreapp2.0/ci-csharp-consoleapp.runtimeconfig.json
+/Users/ambarish/Projects/ShippableCI/ShippableCI/bin/Release/netcoreapp2.0/ci-csharp-consoleapp.runtimeconfig.dev.json
+/Users/ambarish/Projects/ShippableCI/ShippableCI/bin/Release/netcoreapp2.0/ci-csharp-consoleapp.dll
+/Users/ambarish/Projects/ShippableCI/ShippableCI/bin/Release/netcoreapp2.0/ci-csharp-consoleapp.pdb
+/Users/ambarish/Projects/ShippableCI/ShippableCI/obj/Release/netcoreapp2.0/ci-csharp-consoleapp.csprojResolveAssemblyReference.cache
+/Users/ambarish/Projects/ShippableCI/ShippableCI/obj/Release/netcoreapp2.0/ci-csharp-consoleapp.csproj.CoreCompileInputs.cache
+/Users/ambarish/Projects/ShippableCI/ShippableCI/obj/Release/netcoreapp2.0/ci-csharp-consoleapp.AssemblyInfoInputs.cache
+/Users/ambarish/Projects/ShippableCI/ShippableCI/obj/Release/netcoreapp2.0/ci-csharp-consoleapp.AssemblyInfo.cs
+/Users/ambarish/Projects/ShippableCI/ShippableCI/obj/Release/netcoreapp2.0/ci-csharp-consoleapp.dll
+/Users/ambarish/Projects/ShippableCI/ShippableCI/obj/Release/netcoreapp2.0/ci-csharp-consoleapp.pdb
