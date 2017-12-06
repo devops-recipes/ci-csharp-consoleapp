@@ -18,6 +18,5 @@ build:
     - echo 'Building project...'
     - msbuild /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 ci-csharp-consoleapp.sln
     - echo 'Test drive the application on Ubuntu16'
-    - ls -lR /root/.nuget/packages/newtonsoft.json/10.0.3
     - export MONO_PATH=/root/.nuget/packages/newtonsoft.json/10.0.3/lib/netstandard1.3:/root/.nuget/packages/newtonsoft.json/10.0.3/lib/netstandard1.0
     - mono ./ShippableCI/bin/Release/netcoreapp2.0/ci-csharp-consoleapp.dll
