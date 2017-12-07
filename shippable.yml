@@ -10,9 +10,9 @@ build:
     image_tag: "master.4"
     options: "-e HOME=/root"
   ci:
+    - dotnet --version
     - mono --version
     - msbuild /version
-    - csc /version
     #
     # Build and run an application that uses .NET Core 2.0 using the new csproj file format
     #
@@ -50,7 +50,6 @@ build:
     - pushd "${SHIPPABLE_BUILD_DIR}/ClassicProject"
     - echo 'Downloading NuGet...'
     - curl -sSL https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -o nuget.exe
-    - mono nuget.exe help | head -n 1
     - echo 'Restoring NuGet dependencies for ClassicProject that uses the classic csproj file format...'
     - mono nuget.exe restore -MSBuildPath /usr/lib/mono/msbuild/15.0/bin
     - echo 'Building ClassicProject using .NET 4.6.2...'
