@@ -17,14 +17,15 @@ build:
     # Build and run an application that uses .NET Core 2.0 using the new csproj file format
     #
     - pushd "${SHIPPABLE_BUILD_DIR}/ModernProjectNet20"
-    - echo 'Restoring NuGet dependencies...'
+    - echo 'Restoring NuGet dependencies for ModernProjectNet20 that uses the new csproj file format...'
     - msbuild /target:restore /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 ci-csharp-consoleapp.sln
-    - echo 'Building project...'
+    - echo 'Building ModernProjectNet20 using the .NET Core 2 SDK...'
     - msbuild /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 ci-csharp-consoleapp.sln
-    - echo 'Test drive the application on Ubuntu16'
+    - echo 'Running ModernProjectNet20 using dotnet CLI...'
     # Run application using the .NET Core 2 CLI
     - dotnet ./ShippableCI/bin/Release/netcoreapp2.0/ci-csharp-consoleapp.dll
     # Run application using Mono runtime which needs MONO_PATH env variable to be set
+    - echo 'Running ModernProjectNet20 using mono 5...'
     - export MONO_PATH=/root/.nuget/packages/newtonsoft.json/10.0.3/lib/netstandard1.3:/root/.nuget/packages/newtonsoft.json/10.0.3/lib/netstandard1.0
     - mono ./ShippableCI/bin/Release/netcoreapp2.0/ci-csharp-consoleapp.dll
     - pushd
@@ -32,12 +33,12 @@ build:
     # Build and run an application that uses .NET 4.6.2 using the new csproj file format
     #
     - pushd "${SHIPPABLE_BUILD_DIR}/ModernProjectNet462"
-    - echo 'Restoring NuGet dependencies for modern project...'
+    - echo 'Restoring NuGet dependencies for ModernProjectNet462 that uses the new csproj file format...'
     - msbuild /target:restore /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 /verbosity:detailed MyModernProject.sln
-    - echo 'Building modern project...'
+    - echo 'Building ModernProjectNet462 using .NET 4.6.2...'
     - msbuild /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 /verbosity:detailed MyModernProject.sln
     - pushd "${SHIPPABLE_BUILD_DIR}/MyModernProject/MyApplication/bin/Release/net462"
-    - echo 'Running modern project...'
+    - echo 'Running ModernProjectNet462 using mono 5...'
     - mono MyApplication.exe '{"Hello":"World"}'
     - popd
     - popd
@@ -48,12 +49,12 @@ build:
     - echo 'Downloading NuGet...'
     - curl -sSL https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -o nuget.exe
     - mono nuget.exe help | head -n 1
-    - echo 'Restoring NuGet dependencies for classic project...'
+    - echo 'Restoring NuGet dependencies for ClassicProject that uses the classic csproj file format...'
     - mono nuget.exe restore -MSBuildPath /usr/lib/mono/msbuild/15.0/bin
-    - echo 'Building classic project...'
+    - echo 'Building ClassicProject using .NET 4.6.2...'
     - msbuild /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 /verbosity:detailed MyClassicProject.sln
     - pushd "${SHIPPABLE_BUILD_DIR}/MyClassicProject/MyApplication/bin/Release"
-    - echo 'Running classic project...'
+    - echo 'Running ClassicProject using mono 5...'
     - mono MyApplication.exe '{"Hello":"World"}'
     - popd
     - popd
