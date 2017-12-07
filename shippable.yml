@@ -7,7 +7,7 @@ build:
     - /root/.nuget
   pre_ci_boot:
     image_name: devopsrecipes/u16dotnet
-    image_tag: "master.1"
+    image_tag: "master.4"
     options: "-e HOME=/root"
   ci:
     - mono --version
