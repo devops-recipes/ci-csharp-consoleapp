@@ -34,9 +34,9 @@ build:
     #
     - pushd "${SHIPPABLE_BUILD_DIR}/ModernProjectNet462"
     - echo 'Restoring NuGet dependencies for ModernProjectNet462 that uses the new csproj file format...'
-    - msbuild /target:restore /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 /verbosity:detailed MyModernProject.sln
+    - msbuild /target:restore /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 MyModernProject.sln
     - echo 'Building ModernProjectNet462 using .NET 4.6.2...'
-    - msbuild /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 /verbosity:detailed MyModernProject.sln
+    - msbuild /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 MyModernProject.sln
     - pushd "${SHIPPABLE_BUILD_DIR}/MyModernProject/MyApplication/bin/Release/net462"
     - echo 'Running ModernProjectNet462 using mono 5...'
     - mono MyApplication.exe '{"Hello":"World"}'
@@ -52,7 +52,7 @@ build:
     - echo 'Restoring NuGet dependencies for ClassicProject that uses the classic csproj file format...'
     - mono nuget.exe restore -MSBuildPath /usr/lib/mono/msbuild/15.0/bin
     - echo 'Building ClassicProject using .NET 4.6.2...'
-    - msbuild /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 /verbosity:detailed MyClassicProject.sln
+    - msbuild /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 MyClassicProject.sln
     - pushd "${SHIPPABLE_BUILD_DIR}/MyClassicProject/MyApplication/bin/Release"
     - echo 'Running ClassicProject using mono 5...'
     - mono MyApplication.exe '{"Hello":"World"}'
