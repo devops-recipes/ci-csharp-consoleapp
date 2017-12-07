@@ -22,12 +22,14 @@ build:
     - echo 'Building ModernProjectNet20 using the .NET Core 2 SDK...'
     - msbuild /property:Configuration=Release /property:Platform="Any CPU" /maxcpucount /toolsversion:15.0 ci-csharp-consoleapp.sln
     - echo 'Running ModernProjectNet20 using dotnet CLI...'
+    - pushd "${SHIPPABLE_BUILD_DIR}/ModernProjectNet20/MyApplication/bin/Release/netcoreapp2.0"
     # Run application using the .NET Core 2 CLI
-    - dotnet ./ShippableCI/bin/Release/netcoreapp2.0/ci-csharp-consoleapp.dll
+    - dotnet ci-csharp-consoleapp.dll
     # Run application using Mono runtime which needs MONO_PATH env variable to be set
     - echo 'Running ModernProjectNet20 using mono 5...'
     - export MONO_PATH=/root/.nuget/packages/newtonsoft.json/10.0.3/lib/netstandard1.3:/root/.nuget/packages/newtonsoft.json/10.0.3/lib/netstandard1.0
-    - mono ./ShippableCI/bin/Release/netcoreapp2.0/ci-csharp-consoleapp.dll
+    - mono ci-csharp-consoleapp.dll
+    - popd
     - pushd
     #
     # Build and run an application that uses .NET 4.6.2 using the new csproj file format

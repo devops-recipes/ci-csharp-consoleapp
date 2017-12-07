@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ci-csharp-consoleapp", "ShippableCI\ci-csharp-consoleapp.csproj", "{00D756E6-0562-4735-B0F0-FD47A41B9D4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ci-csharp-consoleapp", "MyApplication\ci-csharp-consoleapp.csproj", "{00D756E6-0562-4735-B0F0-FD47A41B9D4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
